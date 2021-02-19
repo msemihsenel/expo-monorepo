@@ -3,7 +3,6 @@ import { SafeAreaView } from 'react-native';
 import { Divider, Icon, Layout, Text, TopNavigation, TopNavigationAction } from '@ui-kitten/components';
 
 import { Component } from '@monorepo/common'
-// import Component from '../../components/Component'
 
 const BackIcon = (props) => (
     <Icon {...props} name='arrow-back' />

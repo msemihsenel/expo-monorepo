@@ -4,9 +4,6 @@ import { Divider, Icon, Layout, Text, TopNavigation, TopNavigationAction, Button
 
 import { Component, CustomComponentForMapping } from '@monorepo/common'
 
-// import Component from '../../components/Component'
-// import CustomComponentForMapping from '../../components/CustomComponentForMapping'
-
 const BackIcon = (props) => (
     <Icon {...props} name='arrow-back' />
 );

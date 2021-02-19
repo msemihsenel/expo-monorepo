@@ -3,7 +3,6 @@ import { SafeAreaView } from 'react-native';
 import { Button, Divider, Layout, TopNavigation } from '@ui-kitten/components';
 
 import { ComponentSecond } from '@monorepo/common'
-// import ComponentSecond from '../../components/ComponentSecond'
 
 export const HomeScreen = ({ navigation, route }) => {
 
