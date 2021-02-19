@@ -1,0 +1,78 @@
+{
+    "strict": {
+  
+      "text-heading-1-font-size": 50,
+      "text-heading-1-font-weight": "bold",
+  
+      "text-subtitle-1-font-size": 15,
+      "text-subtitle-1-font-weight": "600",
+  
+      "text-paragraph-1-font-size": 15,
+      "text-paragraph-1-font-weight": "400",
+  
+      "text-caption-1-font-size": 12,
+      "text-caption-1-font-weight": "400",
+  
+      "text-label-font-size": 12,
+      "text-label-font-weight": "800"
+    },
+    "components": {
+        "Button": {
+          "appearances": {
+            "filled": {
+              "mapping": {},
+              "variantGroups": {
+                "status": {
+                  "primary": {
+                    "backgroundColor": "color-success-700"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "CustomComponentForMapping": {
+            "meta": {
+              "parameters": { 
+                "width": {
+                  "type": "number"
+                },
+                "height": {
+                  "type": "number"
+                },
+                "borderRadius": {
+                  "type": "number"
+                },
+                "backgroundColor": {
+                  "type": "number"
+                },
+                "alignContent":{
+                    "type":"center"
+                },
+                "justifyContent":{
+                    "type":"center"
+                }
+              },
+              "variantGroups": {},
+              "states": {},
+              "appearances": {
+                "filled": {
+                  "default": true
+                }
+              }
+            },
+            "appearances": {
+              "filled": {
+                "mapping": {
+                  "width": 64,
+                  "height": 64,
+                  "borderRadius": 32,
+                  "backgroundColor": "color-info-600",
+                  "alignContent":"center",
+                  "justifyContent":"center"
+                }
+              } 
+            }
+          }
+      }
+  }
