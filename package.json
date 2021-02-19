@@ -11,10 +11,7 @@
     "nohoist": []
   },
   "scripts": {
-    "clear-node_modules": "rm -rf node_modules && rm yarn.lock && cd packages/expo-project && rm -rf node_modules && cd ../common && rm -rf node_modules && cd ../..",
+    "clear-node_modules": "rm -rf node_modules && rm yarn.lock && cd packages/expo-project && rm -rf node_modules && cd ../common && rm -rf node_modules && cd ../web && rm -rf node_modules && cd ../..",
     "postinstall": "cd ./packages/expo-project && expo-yarn-workspaces postinstall"
-  },
-  "devDependencies": {
-    "expo-yarn-workspaces": "^1.3.1"
   }
 }
