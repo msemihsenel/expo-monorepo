@@ -35,6 +35,7 @@
   "devDependencies": {
     "@babel/core": "~7.9.0",
     "@babel/runtime": "^7.0.0",
+    "@expo/webpack-config": "^0.12.58",
     "babel-preset-expo": "~8.0.0",
     "expo-yarn-workspaces": "^1.3.1"
   },
