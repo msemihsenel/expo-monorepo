@@ -5,7 +5,7 @@ import TestComponent from '../src/testComponent'
 
 import { Text } from '@ui-kitten/components';
 
-import { ComponentSecond, CustomComponentForMapping } from '@monorepo/common'
+import { ComponentSecond, CustomCircleButton } from '@monorepo/common'
 
 class Test extends React.Component {
 
@@ -23,9 +23,9 @@ class Test extends React.Component {
                 </div>
                 <TestComponent />
                 <ComponentSecond />
-                <CustomComponentForMapping>
+                <CustomCircleButton>
                     <Text style={{ textAlign: 'center' }}>TEST</Text>
-                </CustomComponentForMapping>
+                </CustomCircleButton>
             </>
 
         );

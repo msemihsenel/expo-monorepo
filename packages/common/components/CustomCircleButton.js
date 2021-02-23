@@ -4,8 +4,8 @@ import { styled } from '@ui-kitten/components';
 
 import { connect } from 'react-redux'
 
-@styled('CustomComponentForMapping')
-class CustomComponentForMapping extends React.Component {
+@styled('CustomCircleButton')
+class CustomCircleButton extends React.Component {
     render() {
         const { eva, style, ...restProps } = this.props;
 
@@ -28,4 +28,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CustomComponentForMapping)
+export default connect(mapStateToProps, mapDispatchToProps)(CustomCircleButton)

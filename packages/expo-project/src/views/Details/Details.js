@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { Divider, Icon, Layout, Text, TopNavigation, TopNavigationAction, Button } from '@ui-kitten/components';
 
-import { Component, CustomComponentForMapping } from '@monorepo/common'
+import { Component, CustomCircleButton } from '@monorepo/common'
 
 const BackIcon = (props) => (
     <Icon {...props} name='arrow-back' />
@@ -30,9 +30,9 @@ export const DetailsScreen = ({ navigation, route }) => {
                 <Text category='h1'>DETAILS</Text>
                 <Text>ROUTE:{route.name}</Text>
                 <Text>PARAMS:{route.params ? JSON.stringify(route.params, 5) : "No Params Passed"}</Text>
-                <CustomComponentForMapping>
+                <CustomCircleButton>
                     <Text style={{ textAlign: 'center' }}>TEST</Text>
-                </CustomComponentForMapping>
+                </CustomCircleButton>
                 <Button onPress={navigateBlank}>OPEN BLANK</Button>
             </Layout>
             <Component />

@@ -1,6 +1,5 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
-import { Button, Divider, Layout, TopNavigation } from '@ui-kitten/components';
+import { Button, Layout } from '@ui-kitten/components';
 
 import { connect } from 'react-redux'
 
