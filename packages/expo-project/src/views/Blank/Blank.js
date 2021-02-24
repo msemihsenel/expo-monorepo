@@ -70,7 +70,7 @@ const BlankScreen = ({ navigation, route }) => {
                     <Tab title='TRANSACTIONS' />
                 </TabBar>
             }
-            <ScrollView style={{ flex: 1 }}>
+            <ScrollView contentContainerStyle={{ minHeight: '100%' }} style={{ flex: 1 }}>
 
                 <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                     <Text category='h1'>BLANK PAGE</Text>
