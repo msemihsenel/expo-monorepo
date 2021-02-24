@@ -2,9 +2,9 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { HomeScreen } from '../views/Home/Home';
-import { DetailsScreen } from '../views/Details/Details';
+import DetailsScreen from '../views/Details/Details';
 import { NotFoundScreen } from '../views/NotFound/NotFound'
-import { BlankScreen } from '../views/Blank/Blank'
+import BlankScreen from '../views/Blank/Blank'
 import { NavTest } from '../views/NavTest/NavTest';
 //import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 

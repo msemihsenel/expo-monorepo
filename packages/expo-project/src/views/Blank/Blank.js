@@ -1,35 +1,22 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, View, Platform, Dimensions } from 'react-native';
-import { Layout, Text, Button, Card, Tab, TabBar, BottomNavigation, BottomNavigationTab } from '@ui-kitten/components';
+import { SafeAreaView, View, Platform, Dimensions, ScrollView } from 'react-native';
+import {
+    Layout,
+    Text,
+    Button,
+    Card,
+    Tab,
+    TabBar,
+    BottomNavigation,
+    BottomNavigationTab,
+    StyleService,
+    useStyleSheet
+} from '@ui-kitten/components';
 
-//import '@expo/match-media'
-//import { useMediaQuery } from "react-responsive";
+import '@expo/match-media'
+import { useMediaQuery } from "react-responsive";
 
-const Header = (props) => (
-    <View {...props}>
-        <Text category='h6'>Maldives</Text>
-        <Text category='s1'>By Wikipedia</Text>
-    </View>
-);
-
-const Footer = (props) => (
-    <View {...props} style={[props.style, styles.footerContainer]}>
-        <Button
-            style={styles.footerControl}
-            size='small'
-            status='basic'>
-            CANCEL
-    </Button>
-        <Button
-            style={styles.footerControl}
-            size='small'>
-            ACCEPT
-    </Button>
-    </View>
-);
-
-
-export function BlankScreen({ navigation, route }) {
+const BlankScreen = ({ navigation, route }) => {
     const [selectedIndex, setSelectedIndex] = React.useState(0);
 
     let screenWidht = Dimensions.get('window').width;
@@ -40,10 +27,40 @@ export function BlankScreen({ navigation, route }) {
         navigation.navigate('Details');
     };
 
-    const isWeb = screenWidht >= 1224//useMediaQuery({ minWidth: 1224 })
+    //const isWeb = screenWidht >= 1224;
+    const isWeb = useMediaQuery({
+        minWidth: 1224,
+        // alternatively...
+        //query: "(max-device-width: 1224px)"
+    });
+    console.log('IS_WEB', isWeb)
+    const styles = useStyleSheet(themedStyles);
+
+    const Header = (props) => (
+        <View {...props}>
+            <Text category='h6'>Maldives</Text>
+            <Text category='s1'>By Wikipedia</Text>
+        </View>
+    );
+
+    const Footer = (props) => (
+        <View {...props} style={[props.style, styles.footerContainer]}>
+            <Button
+                style={styles.footerControl}
+                size='small'
+                status='basic'>
+                CANCEL
+        </Button>
+            <Button
+                style={styles.footerControl}
+                size='small'>
+                ACCEPT
+        </Button>
+        </View>
+    );
 
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={styles.pageContainer}>
             {
                 Platform.OS == 'web' && <TabBar
                     selectedIndex={selectedIndex}
@@ -53,31 +70,33 @@ export function BlankScreen({ navigation, route }) {
                     <Tab title='TRANSACTIONS' />
                 </TabBar>
             }
+            <ScrollView style={{ flex: 1 }}>
 
+                <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                    <Text category='h1'>BLANK PAGE</Text>
+                    <Button onPress={navigateDetails}>OPEN DETAILS</Button>
+                </Layout>
+                <Layout style={styles.topContainer}>
 
-            <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text category='h1'>BLANK PAGE</Text>
-                <Button onPress={navigateDetails}>OPEN DETAILS</Button>
-            </Layout>
-            <Layout style={styles.topContainer}>
+                    <Card style={isWeb ? styles.cardWeb : styles.card} header={Header}>
+                        <Text>With Header</Text>
+                    </Card>
 
-                <Card style={isWeb ? styles.cardWeb : styles.card} header={Header}>
-                    <Text>With Header</Text>
-                </Card>
+                    <Card style={isWeb ? styles.cardWeb : styles.card} footer={Footer}>
+                        <Text>With Footer</Text>
+                    </Card>
 
-                <Card style={isWeb ? styles.cardWeb : styles.card} footer={Footer}>
-                    <Text>With Footer</Text>
-                </Card>
+                    <Card style={isWeb ? styles.cardWeb : styles.card} header={Header}>
+                        <Text>With Header</Text>
+                    </Card>
 
-                <Card style={isWeb ? styles.cardWeb : styles.card} header={Header}>
-                    <Text>With Header</Text>
-                </Card>
+                    <Card style={isWeb ? styles.cardWeb : styles.card} footer={Footer}>
+                        <Text>With FooterF</Text>
+                    </Card>
 
-                <Card style={isWeb ? styles.cardWeb : styles.card} footer={Footer}>
-                    <Text>With Footer</Text>
-                </Card>
+                </Layout>
 
-            </Layout>
+            </ScrollView>
             {
                 Platform.OS != 'web' && <BottomNavigation
                     selectedIndex={selectedIndex}
@@ -91,7 +110,13 @@ export function BlankScreen({ navigation, route }) {
     );
 };
 
-const styles = StyleSheet.create({
+export default BlankScreen
+
+const themedStyles = StyleService.create({
+    pageContainer: {
+        flex: 1,
+        backgroundColor: 'color-basic-100',
+    },
     topContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
