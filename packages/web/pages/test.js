@@ -23,9 +23,12 @@ class Test extends React.Component {
                 </div>
                 <TestComponent />
                 <ComponentSecond />
-                <CustomCircleButton>
-                    <Text style={{ textAlign: 'center' }}>TEST</Text>
-                </CustomCircleButton>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <CustomCircleButton onPress={() => { this.props.changeTada() }}>
+                        <Text style={{ textAlign: 'center', color: '#fff' }}>TEST</Text>
+                    </CustomCircleButton>
+                </div>
+
             </>
 
         );
@@ -41,7 +44,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     console.log('dispatch çalıştı')
     return {
-        change: () => dispatch({ type: 'SET_STATUS', payload: 'TEST' })
+        change: () => dispatch({ type: 'SET_STATUS', payload: 'TEST' }),
+        changeTada: () => dispatch({ type: 'SET_STATUS', payload: 'TADA' })
     }
 }
 
