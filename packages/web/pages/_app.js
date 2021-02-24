@@ -8,6 +8,8 @@ import { EvaIconsPack } from '@ui-kitten/eva-icons';
 
 import { default as KittenConfigs } from '@monorepo/kitten-configs';
 
+import '../styles/globals.css'
+
 const initialState = {
   status: 'first value'
 }
