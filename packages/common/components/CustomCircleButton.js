@@ -10,22 +10,25 @@ class CustomCircleButton extends React.Component {
         const { eva, style, ...restProps } = this.props;
 
         return (
-            <TouchableOpacity onPress={() => { this.props.change() }} style={[eva.style, style]} {...restProps} />
+            // <TouchableOpacity onPress={() => { this.props.change() }} style={[eva.style, style]} {...restProps} />
+            <TouchableOpacity style={[eva.style, style]} {...restProps} />
         );
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        status: state.status
-    }
-}
+export default CustomCircleButton
 
-const mapDispatchToProps = (dispatch) => {
-    console.log('dispatch çalıştı')
-    return {
-        change: () => dispatch({ type: 'SET_STATUS', payload: 'custom' })
-    }
-}
+// const mapStateToProps = (state) => {
+//     return {
+//         status: state.status
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CustomCircleButton)
+// const mapDispatchToProps = (dispatch) => {
+//     console.log('dispatch çalıştı')
+//     return {
+//         change: () => dispatch({ type: 'SET_STATUS', payload: 'custom' })
+//     }
+// }
+
+// export default connect(mapStateToProps, mapDispatchToProps)(CustomCircleButton)
