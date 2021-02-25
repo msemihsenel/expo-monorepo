@@ -57,6 +57,7 @@ const HomeNavigator = () => (
 
 export const AppNavigator = () => (
     <NavigationContainer linking={linking}>
+        <style type="text/css">{`input {outline: none;}`/*TODO:expoeriment*/}</style>
         <HomeNavigator />
     </NavigationContainer>
 );
