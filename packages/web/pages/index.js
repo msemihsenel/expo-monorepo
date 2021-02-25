@@ -1,27 +1,22 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+// @generated: @expo/next-adapter@2.1.61
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
-import { connect } from 'react-redux'
-
-const Home = (props) => {
+export default function App() {
   return (
-    <h1 className={styles.title} onClick={() => { props.change() }}>
-      Welcome to <a href="https://nextjs.org">{props.status}</a>
-    </h1>
-  )
+    <View style={styles.container}>
+      <Text style={styles.text}>Welcome to Expo + Next.js 👋</Text>
+    </View>
+  );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    status: state.status
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  console.log('dispatch çalıştı')
-  return {
-    change: () => dispatch({ type: 'SET_STATUS', payload: 'test2' })
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 16,
+  },
+});

@@ -9,9 +9,11 @@
   },
   "dependencies": {
     "@eva-design/eva": "^2.0.0",
+    "@monorepo/common": "1.0.0",
+    "@monorepo/kitten-configs": "1.0.0",
     "@ui-kitten/components": "^5.0.0",
     "@ui-kitten/eva-icons": "^5.0.0",
-    "next": "10.0.6",
+    "next": "10.0.1",
     "next-redux-wrapper": "^6.0.2",
     "react": "16.13.1",
     "react-dom": "17.0.1",
@@ -19,15 +21,15 @@
     "react-native-web": "^0.14.13",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8",
-    "@monorepo/kitten-configs":"1.0.0",
-    "@monorepo/common":"1.0.0"
+    "redux-devtools-extension": "^2.13.8"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-decorators": "^7.12.13",
     "@babel/core": "^7.12.13",
+    "@babel/plugin-proposal-decorators": "^7.12.13",
     "@babel/plugin-syntax-jsx": "^7.12.13",
+    "@expo/next-adapter": "^2.1.61",
     "babel-loader": "^8.2.2",
+    "babel-preset-expo": "^8.3.0",
     "next-compose-plugins": "^2.2.1",
     "next-transpile-modules": "^6.3.0"
   }
