@@ -73,6 +73,57 @@
                 }
               } 
             }
-          }
+          },
+          "CustomInput": {
+              "meta": {
+                "parameters": { 
+                  "width": {
+                    "type": "number"
+                  },
+                  "height": {
+                    "type": "number"
+                  },
+                  "borderRadius": {
+                    "type": "number"
+                  },
+                  "borderColor":{
+                    "type": "number"
+                  },
+                  "borderWidth":{
+                    "type": "number"
+                  },
+                  "backgroundColor": {
+                    "type": "number"
+                  },
+                  "alignContent":{
+                      "type":"center"
+                  },
+                  "justifyContent":{
+                      "type":"center"
+                  }
+                },
+                "variantGroups": {},
+                "states": {},
+                "appearances": {
+                  "filled": {
+                    "default": true
+                  }
+                }
+              },
+              "appearances": {
+                "filled": {
+                  "mapping": {
+                    "width": "70%",
+                    "height": 32,
+                    "borderRadius": 10,
+                    "backgroundColor": "color-warning-800",
+                    "borderWidth":5,
+                    "borderColor": "color-danger-600",
+                    "alignContent":"center",
+                    "justifyContent":"center"
+                  }
+                } 
+              }
+            }
       }
   }
