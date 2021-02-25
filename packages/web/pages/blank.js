@@ -14,9 +14,6 @@ import {
 import { useMediaQuery } from "react-responsive";
 
 
-
-
-
 const Header = (props) => (
     <View {...props}>
         <Text category='h6'>Maldives</Text>
@@ -25,18 +22,15 @@ const Header = (props) => (
 );
 
 const Footer = (props) => (
-    <View {...props} style={[props.style, {
-        flexDirection: 'row',
-        justifyContent: 'flex-end'//TODO
-    }]}>
+    <View {...props} style={[props.style, rawStyles.footerContainer]}>
         <Button
-            style={{ marginHorizontal: 2 }}
+            style={rawStyles.footerControl}
             size='small'
             status='basic'>
             CANCEL
         </Button>
         <Button
-            style={{ marginHorizontal: 2 }}
+            style={rawStyles.footerControl}
             size='small'>
             ACCEPT
         </Button>
@@ -49,15 +43,15 @@ const BlankScreen = (props) => {
     const isWebControl = useMediaQuery({ minWidth: 1224 });
 
 
-    const styles = useStyleSheet(themedStyles);
+    const styles = useStyleSheet(rawStyles);
 
     const navigateDetails = () => {
         window.location.href = '/details';
     };
 
-    //const isWeb = screenWidht >= 1224;
-
     console.log('IS_WEB', isWeb)
+    console.log('THEMED_STYLES', rawStyles)
+    console.log('STYLES', styles)
 
 
     useEffect(() => {
@@ -65,7 +59,9 @@ const BlankScreen = (props) => {
     }, [isWebControl])
 
 
-
+    if (isWeb == undefined) {
+        return <></>
+    }
     return (
         <SafeAreaView style={styles.pageContainer}>
 
@@ -111,7 +107,7 @@ const BlankScreen = (props) => {
 
 export default BlankScreen
 
-const themedStyles = StyleService.create({
+const rawStyles = StyleService.create({
     pageContainer: {
         flex: 1,
         height: '100vh',
@@ -133,7 +129,8 @@ const themedStyles = StyleService.create({
         minWidth: '24.5%'
     },
     footerContainer: {
-
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
     },
     footerControl: {
         marginHorizontal: 2,

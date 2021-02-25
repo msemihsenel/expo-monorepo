@@ -1,22 +1,33 @@
-// @generated: @expo/next-adapter@2.1.61
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { Button, Layout, StyleService, useStyleSheet } from '@ui-kitten/components';
 
-export default function App() {
+import { ComponentSecond } from '@monorepo/common'
+
+const App = (props) => {
+
+  const styles = useStyleSheet(themedStyles);
+
+  const navigateDetails = () => {
+    window.location.href = '/details'
+  };
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Welcome to Expo + Next.js 👋</Text>
-    </View>
+    <SafeAreaView style={styles.pageContainer}>
+      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Button onPress={navigateDetails}>OPEN DETAILS</Button>
+        <ComponentSecond />
+      </Layout>
+    </SafeAreaView>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
+export default App
+
+const themedStyles = StyleService.create({
+  pageContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 16,
+    height: '100vh',
+    backgroundColor: 'color-basic-100',
   },
 });
