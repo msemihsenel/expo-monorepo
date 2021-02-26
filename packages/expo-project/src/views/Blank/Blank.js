@@ -42,15 +42,12 @@ const Footer = (props) => (
 const BlankScreen = ({ navigation, route }) => {
     const [selectedIndex, setSelectedIndex] = React.useState(0);
 
-    // let screenWidht = Dimensions.get('window').width;
-    // let screenHeight = Dimensions.get('window').height;
     console.log('PLATFORM', Platform)
-    // console.log('DIMENSIONS', Dimensions.get('window'))
+
     const navigateDetails = () => {
         navigation.navigate('Details');
     };
 
-    //const isWeb = screenWidht >= 1224;
     const isWeb = useMediaQuery({
         minWidth: 1224,
         // alternatively...

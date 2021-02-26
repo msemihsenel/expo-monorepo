@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { Button, Divider, Layout, TopNavigation, Text } from '@ui-kitten/components';
+import { Layout, Text } from '@ui-kitten/components';
 
 export const NotFoundScreen = ({ navigation, route }) => {
 

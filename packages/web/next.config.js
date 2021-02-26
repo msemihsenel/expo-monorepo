@@ -32,24 +32,4 @@ const withTM = require('next-transpile-modules')(['@ui-kitten/components', 'reac
 //     },
 // });
 
-module.exports = withPlugins([withTM, [withExpo]]
-    //     , {
-    //     webpack: config => {
-    //         config.resolve.alias = {
-    //             ...(config.resolve.alias || {}),
-    //             // Transform all direct `react-native` imports to `react-native-web`
-    //             'react-native$': 'react-native-web',
-    //         }
-    //         config.resolve.extensions = [
-    //             '.web.js',
-    //             '.web.ts',
-    //             '.web.tsx',
-    //             ...config.resolve.extensions,
-    //         ]
-    //         //config.externals = [...config.externals, { 'react-native': 'react-native' }];
-    //         //config.plugins.push(new webpack.IgnorePlugin(/node_modules\/react-native/))
-
-    //         return config
-    //     },
-    // }
-)
+module.exports = withPlugins([withTM, [withExpo]])
