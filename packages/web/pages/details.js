@@ -8,7 +8,7 @@ import {
 } from '@ui-kitten/components';
 import { connect } from 'react-redux'
 
-import { Component, CustomCircleButton } from '@monorepo/common'
+import { Component, CustomCircleButton, CustomInput } from '@monorepo/common'
 
 const Details = (props) => {
 
@@ -27,6 +27,7 @@ const Details = (props) => {
                 <CustomCircleButton onPress={() => { props.change(); console.log('STYLES', styles) }}>
                     <Text style={styles.buttonText}>TEST</Text>
                 </CustomCircleButton>
+                <CustomInput onChangeText={text => console.log(text)} />
                 <Button onPress={navigateBlank}>OPEN BLANK</Button>
             </Layout>
             <Component />
