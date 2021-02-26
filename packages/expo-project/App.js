@@ -44,6 +44,7 @@ import * as eva from '@eva-design/eva';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { AppNavigator } from './src/navigation/Navigation';
+import { Platform } from 'react-native';
 
 import { default as KittenConfigs } from '@monorepo/kitten-configs';
 
@@ -67,6 +68,7 @@ export default () => {
   return (
 
     <Provider store={store}>
+      {Platform.OS == 'web' && <style type="text/css">{`input {outline: none;}`/*TODO:expoeriment*/}</style>}
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider
         {...eva}

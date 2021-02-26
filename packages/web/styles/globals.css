@@ -15,9 +15,6 @@ a {
   box-sizing: border-box;
 }
 
-.pageContainer {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+input {
+  outline: none;
 }
